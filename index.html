@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PixelCraft Studios | Professional Web Design Services</title>
-    <meta name="description" content="PixelCraft Studios - Award-winning web design agency in London. We create stunning, responsive websites that drive business growth.">
+    <title>Bunu Com Limited | Professional Web Design Services</title>
+    <meta name="description" content="Bunu Com Limited - Professional web design agency in the UK. We create stunning, responsive websites that drive business growth.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -23,6 +23,10 @@
             box-sizing: border-box;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -37,15 +41,535 @@
             padding: 0 20px;
         }
         
-        /* Add all the CSS styles from the previous code here */
-        /* [Include all the CSS from the previous response] */
+        section {
+            padding: 80px 0;
+        }
         
+        h1, h2, h3, h4 {
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 160px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-btns .btn {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .hero-btns .btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .hero-btns .btn-secondary {
+            background: transparent;
+            border-color: white;
+            color: white;
+        }
+        
+        .hero-btns .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .portfolio {
+            background: #f1f5f9;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .portfolio-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            transition: var(--transition);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(37, 99, 235, 0.9);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            text-align: left;
+        }
+        
+        .about-text h2:after {
+            left: 0;
+            transform: none;
+        }
+        
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonials {
+            background: #f1f5f9;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            background: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            margin: 0;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-col ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #cbd5e1;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-text h2 {
+                text-align: center;
+            }
+            
+            .about-text h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero {
+                padding: 140px 0 80px;
+            }
+            
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">Pixel<span>Craft</span></a>
+            <a href="#" class="logo">Bunu<span>Com</span></a>
             <div class="mobile-menu">
                 <i class="fas fa-bars"></i>
             </div>
@@ -63,8 +587,8 @@
 
     <section class="hero" id="home">
         <div class="container">
-            <h1>Transform Your Digital Presence</h1>
-            <p>We create stunning, responsive websites that drive business growth. As a UK-based web design agency, we specialize in crafting digital experiences that convert visitors into customers.</p>
+            <h1>Professional Web Design Solutions</h1>
+            <p>Bunu Com Limited creates stunning, responsive websites that drive business growth. As a UK-based web design agency, we specialize in crafting digital experiences that convert visitors into customers.</p>
             <div class="hero-btns">
                 <a href="#portfolio" class="btn">View Our Work</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -113,22 +637,21 @@
             <h2>Our Portfolio</h2>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <!-- Using CSS gradients instead of images -->
-                    <div class="portfolio-image" style="background: linear-gradient(45deg, #667eea 0%, #764ba2 100%); height: 250px;"></div>
+                    <div class="portfolio-image" style="background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);"></div>
                     <div class="portfolio-overlay">
                         <h3>Boutique Fashion Store</h3>
                         <p>E-commerce website with custom product filtering</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-image" style="background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%); height: 250px;"></div>
+                    <div class="portfolio-image" style="background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);"></div>
                     <div class="portfolio-overlay">
                         <h3>Financial Services Firm</h3>
                         <p>Corporate website with client portal</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-image" style="background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%); height: 250px;"></div>
+                    <div class="portfolio-image" style="background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);"></div>
                     <div class="portfolio-overlay">
                         <h3>Gourmet Restaurant</h3>
                         <p>Responsive website with online booking system</p>
@@ -142,17 +665,16 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About PixelCraft Studios</h2>
-                    <p>Founded in London, PixelCraft Studios has grown into a trusted web design agency serving clients across the UK. Our team creates websites that not only look beautiful but also deliver measurable results.</p>
-                    <p>We believe in a collaborative approach, working closely with our clients to understand their business goals and target audience.</p>
+                    <h2>About Bunu Com Limited</h2>
+                    <p>Bunu Com Limited is a professional web design agency serving clients across the UK. Our team creates websites that not only look beautiful but also deliver measurable results for your business.</p>
+                    <p>We believe in a collaborative approach, working closely with our clients to understand their business goals and target audience to create custom solutions that drive growth and engagement.</p>
                     <a href="#contact" class="btn">Work With Us</a>
                 </div>
                 <div class="about-image">
-                    <!-- Using CSS illustration instead of image -->
                     <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 400px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
                         <div style="text-align: center;">
                             <i class="fas fa-users" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                            <p>Our Creative Team</p>
+                            <p>Bunu Com Limited Team</p>
                         </div>
                     </div>
                 </div>
@@ -166,7 +688,7 @@
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        "PixelCraft transformed our online presence. Our new website has increased conversions by 40% and the team was fantastic to work with."
+                        "Bunu Com Limited transformed our online presence. Our new website has increased conversions by 40% and the team was fantastic to work with throughout the process."
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
@@ -180,7 +702,7 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        "The e-commerce site they built for us has exceeded all expectations. Sales are up 65% and the user experience is seamless."
+                        "The e-commerce site they built for us has exceeded all expectations. Sales are up 65% and the user experience is seamless. Highly recommended!"
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
@@ -208,8 +730,8 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
-                                <h4>Our Office</h4>
-                                <p>London, United Kingdom</p>
+                                <h4>Our Location</h4>
+                                <p>United Kingdom</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -218,13 +740,13 @@
                             </div>
                             <div>
                                 <h4>Email</h4>
-                                <p>hello@pixelcraft.example</p>
+                                <p>contact@bunucomlimited.co.uk</p>
                             </div>
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
@@ -257,8 +779,8 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col">
-                    <h3>PixelCraft Studios</h3>
-                    <p>We create stunning, responsive websites that drive business growth and deliver exceptional user experiences.</p>
+                    <h3>Bunu Com Limited</h3>
+                    <p>Professional web design services creating stunning, responsive websites that drive business growth and deliver exceptional user experiences.</p>
                 </div>
                 <div class="footer-col">
                     <h3>Quick Links</h3>
@@ -281,32 +803,28 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 PixelCraft Studios. All rights reserved.</p>
+                <p>&copy; 2023 Bunu Com Limited. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
         document.querySelector('.mobile-menu').addEventListener('click', function() {
             document.querySelector('nav ul').classList.toggle('active');
         });
         
-        // Close mobile menu when clicking on a link
         document.querySelectorAll('nav ul li a').forEach(link => {
             link.addEventListener('click', () => {
                 document.querySelector('nav ul').classList.remove('active');
             });
         });
         
-        // Form Submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your message! We will get back to you soon.');
             this.reset();
         });
         
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
